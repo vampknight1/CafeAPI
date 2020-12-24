@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Tables>
+@{
+    //Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+    ViewData["Title"] = "Table Index";
+}
+
+<link href="~/asset/css/plugins/datatables.min.css" rel="stylesheet">
+
+<p>
+    <a asp-action="Create" class="btn btn-success" id="btnCreate">Create New</a>
+</p>
+<table id="myTable" class="table stripe hover order-column responsive">
+    <thead>
+        <tr>
+            <th>-</th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID" class="">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID"
+                   class="btn-danger"
+                   onclick="return confirm('Are you sure wants to delete @item.TableNo ?');">
+                    Delete
+                </a>
+            </td>
+            <td>
+                @item.TableNo
+            </td>
+            <td>
+                @item.TableCode
+            </td>
+            <td>
+                @item.Note
+            </td>
+        </tr>
+    }
+</table>
+
+<script src="~/asset/js/plugins/datatables.js"></script>
+<script src="~/scripts/IndexTables.js"></script>

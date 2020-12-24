@@ -1,0 +1,58 @@
+﻿@model Customers
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<form asp-action="Create" id="myForm">
+    <div class="form-group">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="CustomerName" class="control-label form-text col-sm-2"></label>
+            <div class="col-sm-10">
+                <input asp-for="CustomerName" class="form-control android" required />
+                <span asp-validation-for="CustomerName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TableCode" class="control-label form-text col-sm-2"></label>
+            <div class="col-sm-10">
+                <input asp-for="TableCode" class="form-control android" required />
+                <span asp-validation-for="TableCode" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerAddress" class="control-label form-text col-sm-2"></label>
+            <div class="col-sm-10">
+                <input asp-for="CustomerAddress" class="form-control android" required />
+                <span asp-validation-for="CustomerAddress" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="City" class="control-label form-text col-sm-2"></label>
+            <div class="col-sm-10">
+                <select asp-for="City" class="form-control android" asp-items="@ViewBag.City"></select>
+                <span asp-validation-for="City" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerPhone" class="control-label form-text col-sm-2"></label>
+            <div class="col-sm-10">
+                <input asp-for="CustomerPhone" class="form-control android" required />
+                <span asp-validation-for="CustomerPhone" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn ripple-infinite btn-raised btn-success" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

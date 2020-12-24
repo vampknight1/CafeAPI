@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Customers>
+@{
+    //Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+    ViewData["Title"] = "Customer Index";
+}
+
+<link href="~/asset/css/plugins/datatables.min.css" rel="stylesheet">
+
+<p>
+    <a asp-action="Create" class="btn btn-success" id="btnCreate">Create New</a>
+</p>
+<table id="myTable" class="table-bordered table-condensed stripe hover order-column responsive">
+    <thead>
+        <tr>
+            <th>-</th>
+            <th>
+                @Html.DisplayNameFor(model => model.TableCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhone)
+            </th>
+        </tr>
+    </thead>
+    @*@foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @item.TableCode
+            </td>
+            <td>
+                @item.CustomerName
+            </td>
+            <td>
+                @item.CustomerAddress
+            </td>
+            <td>
+                @item.City
+            </td>
+            <td>
+                @item.CustomerPhone
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID"
+                    class="btn btn-danger"
+                    onclick="return confirm('Are you sure wants to delete @item.CustomerName?');">Delete
+                </a>
+            </td>
+        </tr>
+            }*@
+</table>
+
+<script src="~/asset/js/plugins/datatables.js"></script>
+<script src="~/scripts/IndexCustomers.js"></script>

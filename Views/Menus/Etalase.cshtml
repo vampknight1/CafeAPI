@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Menus>
+
+@{
+    ViewData["Title"] = "Index Menu";
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        string imagesPath = "~/upload/images/" + (item.MenuImg ?? "noimages.png");
+
+    <div class="col-sm-6 col-md-3 product-grid" style="min-width: 18rem; max-width:30.5%;">
+        <div class="thumbnail">
+            <div class="product-price product-price-top">
+                <h4>@item.MenuPrice</h4>
+            </div>
+            <img src="@imagesPath" alt="image"
+                 asp-append-version="true" />
+            <div class="caption">
+                <small>@item.CategoryName</small>
+                <small class="pull-right">
+                    <span class="rate fa-star fa"></span>
+                    <span class="rate fa-star fa"></span>
+                    <span class="rate fa-star fa"></span>
+                    <span class="rate fa-star fa"></span>
+                    <span class="rate fa-star-half fa"></span>
+                </small>
+                <h4>@item.MenuName</h4>
+                <p>@item.MenuDesc</p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">Buy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    }
+</div>

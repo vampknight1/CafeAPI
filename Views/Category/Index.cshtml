@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Category>
+@{
+    //Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+    ViewData["Title"] = "Customer Index";
+}
+
+<link href="~/asset/css/plugins/datatables.min.css" rel="stylesheet">
+
+<p>
+    <a asp-action="Create" class="btn btn-success" id="btnCreate">Create New</a>
+</p>
+<table id="myTable" class="compact stripe hover order-column responsive">
+    <thead>
+        <tr>
+            <th>-</th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryDesc)
+            </th>
+        </tr>
+    </thead>
+    @*@foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @item.CategoryName
+            </td>
+            <td>
+                @item.CategoryDesc
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID"
+                    class="btn btn-danger"
+                    onclick="return confirm('Are you sure wants to delete @item.CategoryName ?');">DEL
+                </a>
+            </td>
+        </tr>
+            }*@
+</table>
+
+<script src="~/asset/js/plugins/datatables.js"></script>
+<script src="~/scripts/IndexCategory.js"></script>

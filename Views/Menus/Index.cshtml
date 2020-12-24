@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Menus>
+
+@{
+    ViewData["Title"] = "Index Menu";
+    //Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+
+}
+
+<div class="box span12" style="margin-left: 0px">
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</div>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuType)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        //string imagesPath = (item.MenuImg ?? "~/upload/images/noimages.png");
+        string imagesPath = "~/upload/images/" + (item.MenuImg ?? "noimages.png");
+        <tr>
+            <td width="30%">
+                <div class="thumbnail">
+                    <div class="product-price product-price-top">
+                        <h4>@item.MenuPrice</h4>
+                    </div>
+                    <img src="@imagesPath" alt="image"
+                         asp-append-version="true" />
+                    <div class="caption">
+                        <small>@item.CategoryName</small>
+                        <small class="pull-right">
+                            <span class="rate fa-star fa"></span>
+                            <span class="rate fa-star fa"></span>
+                            <span class="rate fa-star fa"></span>
+                            <span class="rate fa-star fa"></span>
+                            <span class="rate fa-star-half fa"></span>
+                        </small>
+                        <h4>@item.MenuName</h4>
+                        <p>@item.MenuDesc</p>
+                        <p>
+                            <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID" onclick="return confirm('Are sure wants to delete?');">DEL</a>
+                        </p>
+                    </div>
+                </div>
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuType)
+            </td>
+        </tr>
+    }
+</table>
+

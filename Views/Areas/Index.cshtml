@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Area>
+
+@{
+    //Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+    ViewData["Title"] = "Index Area";
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID" onclick="return confirm('Are sure wants to delete @item.Name ?');">DEL</a>
+            </td>
+        </tr>
+    }
+</table>

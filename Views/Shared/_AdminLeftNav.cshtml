@@ -1,0 +1,91 @@
+﻿<div id="left-menu">
+    <div class="sub-left-menu scroll">
+        <ul class="nav nav-list">
+            <li><div class="left-bg"></div></li>
+            <li class="time">
+                <h1 class="animated fadeInLeft">21:00:59</h1>
+                <p class="animated fadeInRight">Sat,October 1st 2029</p>
+            </li>
+            <li class="ripple">
+                <a asp-controller="EventCalendar" asp-action="Index">
+                    <span class="fa fa-calendar-o"></span>Calendar Events
+                </a>
+            </li>
+            <li class="active ripple">
+                <a class="tree-toggle nav-header">
+                    <span class="fa-home fa"></span> Dashboard
+                    <span class="fa-angle-right fa right-arrow text-right"></span>
+                </a>
+                <ul class="nav nav-list tree">
+                    <li><a href="dashboard-v1.html">Dashboard v.1</a></li>
+                    <li><a href="dashboard-v2.html">Dashboard v.2</a></li>
+                </ul>
+            </li>
+            <li class="ripple">
+                <a class="tree-toggle nav-header">
+                    <span class="fa-area-chart fa"></span> Master Data
+                    <span class="fa-angle-right fa right-arrow text-right"></span>
+                </a>
+                <ul class="nav nav-list tree">
+
+                    <li>
+                        <a asp-controller="Areas" asp-action="Index">
+                            List Area
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Customers" asp-action="Index">
+                            List Customer
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ripple">
+                <a class="tree-toggle nav-header">
+                    <span class="fa fa-pencil-square"></span> Settings  <span class="fa-angle-right fa right-arrow text-right"></span>
+                </a>
+                <ul class="nav nav-list tree">
+                    <li>
+                        <a asp-controller="Tables" asp-action="Index">
+                            Tables Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Category" asp-action="Index">
+                            Category Menus
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Menus" asp-action="Index">
+                            List Menus
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ripple">
+                <a class="tree-toggle nav-header"><span class="fa fa-check-square-o"></span> Transaksi  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
+                <ul class="nav nav-list tree">
+                    <li>
+                        <a asp-controller="Menus" asp-action="Etalase">
+                            Etalase Menus
+                        </a>
+                    </li>
+                    <li><a href="#">Wizard</a></li>
+                    <li><a href="#">File Upload</a></li>
+                    <li><a href="#">Text Editor</a></li>
+                </ul>
+            </li>
+            <li><a href="credits.html">Credits</a></li>
+            @*<li>
+                <a asp-controller="KlhkSents" asp-action="Index">
+                    List Data Sents to KLHK
+                </a>
+            </li>*@
+            @*<li>
+                <a asp-controller="KlhkSentsApi" asp-action="Get">
+                    API GetAll Sents Data List
+                </a>
+            </li>*@
+        </ul>
+    </div>
+</div>

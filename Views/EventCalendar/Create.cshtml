@@ -1,0 +1,63 @@
+﻿@model EventCalendar
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<form asp-action="Create" id="myForm">
+    <div class="form-group">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Subject" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Subject" class="form-control android" />
+                <span asp-validation-for="Subject" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Description" class="form-control android" />
+                <span asp-validation-for="Description" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="StartEvent" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="StartEvent" class="form-control android" />
+                <span asp-validation-for="StartEvent" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EndEvent" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EndEvent" class="form-control android" />
+                <span asp-validation-for="EndEvent" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsFullDay" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="IsFullDay"  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ThemeColor" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ThemeColor" class="form-control android" type="color" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn ripple-infinite btn-raised btn-success" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
